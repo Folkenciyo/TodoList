@@ -12,6 +12,8 @@ const Home = () => {
 	];
 	const [list, setList] = useState([]);
 	const [listComponents, setListComponents] = useState([]);
+	const INPUT = document.querySelector("#upload");
+	const [addingTask, setaddingTask] = useEffect([]);
 
 	useEffect(() => {
 		if (list) {
@@ -50,7 +52,7 @@ const Home = () => {
 	const upload = list => {
 		fetch("https://assets.breatheco.de/apis/fake/todos/user/folkencillo", {
 			method: "PUT",
-			body: JSON.stringify({ todoList }),
+			body: JSON.stringify({ list }),
 			headers: new Headers({
 				"Content-Type": "application/json"
 			})
@@ -69,20 +71,22 @@ const Home = () => {
 
 	return (
 		<div className="m-auto">
-			<form>
+			<form
+				onSubmit={event => {
+					event.preventDefault();
+					setaddingTask([...addingTask, INPUT]);
+				}}>
 				<div>
 					<input
-						type="submit"
-						value="SUBMIT"
-						onClick={() => {
-							upload(todoList);
-						}}
+						type="text"
+						value="Cuentame tus problemas"
+						id="upload"
 					/>
 				</div>
-				<div>
-					<ul>{listComponents}</ul>
-				</div>
 			</form>
+			<div>
+				<ul>{listComponents}</ul>
+			</div>
 		</div>
 	);
 };

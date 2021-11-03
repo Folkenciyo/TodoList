@@ -6,6 +6,7 @@ const Home = () => {
 	const INPUT = document.querySelector("input");
 	const [list, setList] = useState([]);
 	const [toDoList, setToDoList] = useState([]);
+	const [update, setUpdate] = useState(false);
 
 	useEffect(() => {
 		fetch("https://assets.breatheco.de/apis/fake/todos/user/folkencillo", {
@@ -24,18 +25,54 @@ const Home = () => {
 	}, []);
 
 	useEffect(() => {
-		setToDoList(
-			list.map((task, index) => {
-				return <Task label={task.label} key={index.toString()} />;
-			})
-		);
+		if (update) {
+			fetch(
+				"https://assets.breatheco.de/apis/fake/todos/user/folkencillo",
+				{
+					method: "PUT",
+					body: JSON.stringify(list),
+					headers: new Headers({
+						"Content-Type": "application/json"
+					})
+				}
+			)
+				.then(response => {
+					if (!response.ok) {
+						throw new Error("MAAAAL");
+					}
+				})
+				.catch(error => {
+					console.log(error);
+				});
+		}
+	}, [update]);
+
+	useEffect(() => {
+		if (list.length != 0) {
+			setToDoList(
+				list.map((task, index) => {
+					return (
+						<Task
+							label={task.label}
+							key={index.toString()}
+							changeStatus={changeStatus}
+						/>
+					);
+				})
+			);
+		}
 	}, [list]);
 
+	const changeStatus = () => {
+		setList(list.filter(i=> === false))///
+	};
+
 	return (
-		<div className="m-auto">
+		<div className="m-auto text-center mt5">
 			<form
 				onSubmit={event => {
 					event.preventDefault();
+					setUpdate(true);
 					setList([...list, { label: INPUT.value, done: false }]);
 				}}>
 				<input type="text" />

@@ -7,7 +7,7 @@ const Task = props => {
 			{props.label}
 			<button
 				onClick={() => {
-					props.changeStatus();
+					props.changeStatus(props.id);
 				}}></button>
 		</li>
 	);
@@ -15,7 +15,8 @@ const Task = props => {
 
 Task.propTypes = {
 	label: PropTypes.string,
-	changeStatus: PropTypes.func
+	changeStatus: PropTypes.func,
+	id: PropTypes.number
 };
 
 export default Task;

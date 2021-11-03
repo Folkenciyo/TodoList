@@ -56,15 +56,18 @@ const Home = () => {
 							label={task.label}
 							key={index.toString()}
 							changeStatus={changeStatus}
+							id={index}
 						/>
 					);
 				})
 			);
 		}
 	}, [list]);
+	///;console.log(elementTask[index]);
 
-	const changeStatus = () => {
-		setList(list.filter(i=> === false))///
+	const changeStatus = indexDestroy => {
+		setList(list.filter((_, index) => index !== indexDestroy));
+		console.log(setList(list.filter((_, index) => index !== indexDestroy)));
 	};
 
 	return (

@@ -18,10 +18,13 @@ background-image: repeating-linear-gradient(transparent, transparent 50px, purpl
 }
 
 form{
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 93%);
+    padding-bottom: 1rem;
     padding-top: 1rem;
 }
 
 h1{
+    margin-bottom: 0;
     background: linear-gradient(
 0deg, rgba(0,0,0,1) 0%, rgba(110,78,78,0.21612394957983194) 100%);
     padding-top: 2rem;
@@ -31,7 +34,11 @@ h1{
     font-weight: 600;
 }
 input{
-    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(255,255,255,1) 63%);
+    color: #71106B;
+    width: 36rem;
+    font-weight: bold;
+    text-align: center;
+ background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(255,255,255,1) 63%);
 }
 ul,input {
     font-family: 'Gochi Hand', cursive;
@@ -45,6 +52,8 @@ ul{
 }
 
 li{
+    font-weight: bold;
+    font-size: 50px;
     border: 2px solid black;
     border-radius: 5%;
     color: black;
@@ -70,6 +79,8 @@ li{
 }
 
 button{
+    box-shadow: #71106B;
+    border: 3px solid #71106B;
     display: flex;
     align-items: center;
     justify-content: center;

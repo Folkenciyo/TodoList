@@ -8,6 +8,7 @@ const Task = props => {
 			<button
 				onClick={() => {
 					props.changeStatus(props.id);
+					console.log(props.changeStatus(props.id));
 				}}>
 				<i className="fas fa-skull"></i>
 			</button>

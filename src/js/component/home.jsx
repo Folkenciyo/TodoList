@@ -49,6 +49,7 @@ const Home = () => {
 	}, [update]);
 
 	useEffect(() => {
+		/* setUpdate(true); */
 		if (list.length != 0) {
 			setToDoList(
 				list.map((task, index) => {
@@ -64,7 +65,6 @@ const Home = () => {
 			);
 		}
 	}, [list]);
-	///;console.log(elementTask[index]);
 
 	const changeStatus = indexDestroy => {
 		setList(list.filter((_, index) => index !== indexDestroy));

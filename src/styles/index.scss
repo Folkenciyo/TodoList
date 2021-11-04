@@ -1,13 +1,78 @@
 @import "~bootstrap/scss/bootstrap.scss";
+@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Sacramento&display=swap');
+/* *{
+    border: 1px solid red;
+} */
 
-/* 
+body{
+    color: white;
+background-color:#66a3ff;
+ 
+background-image: repeating-linear-gradient(transparent, transparent 50px, purple 50px, purple 53px, transparent 53px, transparent 63px, purple 63px, purple 66px, transparent 66px, transparent 116px, rgba(0,0,0,.5) 116px, rgba(0,0,0,.5) 166px, rgba(255,255,255,.2) 166px, rgba(255,255,255,.2) 169px, rgba(0,0,0,.5) 169px, rgba(0,0,0,.5) 179px, rgba(255,255,255,.2) 179px, rgba(255,255,255,.2) 182px, rgba(0,0,0,.5) 182px, rgba(0,0,0,.5) 232px, transparent 232px),  
+  repeating-linear-gradient(270deg, transparent, transparent 50px, purple 50px, purple 53px, transparent 53px, transparent 63px, purple 63px, purple 66px, transparent 66px, transparent 116px, rgba(0,0,0,.5) 116px, rgba(0,0,0,.5) 166px, rgba(255,255,255,.2) 166px, rgba(255,255,255,.2) 169px, rgba(0,0,0,.5) 169px, rgba(0,0,0,.5) 179px, rgba(255,255,255,.2) 179px, rgba(255,255,255,.2) 182px, rgba(0,0,0,.5) 182px, rgba(0,0,0,.5) 232px, transparent 232px);
 
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
+}
 
-*/
+.all{
+    padding-top: 2rem;
+}
+
+form{
+    padding-top: 1rem;
+}
+
+h1{
+    background: linear-gradient(
+0deg, rgba(0,0,0,1) 0%, rgba(110,78,78,0.21612394957983194) 100%);
+    padding-top: 2rem;
+    font-family: 'Gochi Hand', cursive;
+    font-family: 'Sacramento', cursive;
+    font-size: 100px;
+    font-weight: 600;
+}
+input{
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(255,255,255,1) 63%);
+}
+ul,input {
+    font-family: 'Gochi Hand', cursive;
+    font-family: 'Sacramento', cursive;
+    font-size: 30px;
+}
+
+ul{
+    padding-left: 15rem;
+    padding-right: 15rem;
+}
+
+li{
+    border: 2px solid black;
+    border-radius: 5%;
+    color: black;
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(186,141,71,1) 19%, rgba(255,255,255,1) 63%, rgba(191,145,67,1) 82%, rgba(166,126,58,1) 96%, rgba(0,0,0,1) 97%, rgba(0,0,0,0) 100%);
+    justify-content: space-between;
+    display: flex;
+    padding-left: 10rem;
+    padding-right: 10rem;
+}
+
+::marker{
+    color: transparent;
+}
+
+.list{
+    background: #fff;
+    display: contents;
+    width: 500px;
+    height: auto;
+}
+    .task{
+        display: flex;
+}
+
+button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    border-radius: 50%;
+}

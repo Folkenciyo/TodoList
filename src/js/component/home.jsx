@@ -38,6 +38,7 @@ const Home = () => {
 			)
 				.then(response => {
 					if (!response.ok) {
+						setUpdate(false);
 						throw new Error("MAAAAL");
 					}
 				})
@@ -67,20 +68,26 @@ const Home = () => {
 
 	const changeStatus = indexDestroy => {
 		setList(list.filter((_, index) => index !== indexDestroy));
+		setUpdate(true);
 		console.log(setList(list.filter((_, index) => index !== indexDestroy)));
 	};
 
 	return (
 		<div className="m-auto text-center mt5">
-			<form
-				onSubmit={event => {
-					event.preventDefault();
-					setUpdate(true);
-					setList([...list, { label: INPUT.value, done: false }]);
-				}}>
-				<input type="text" />
-			</form>
-			<ul>{toDoList}</ul>
+			<h1>Mis cositas por hacer</h1>
+			<div className="list">
+				<form
+					onSubmit={event => {
+						event.preventDefault();
+						setUpdate(true);
+						setList([...list, { label: INPUT.value, done: false }]);
+					}}>
+					<input type="text" />
+				</form>
+				<div className="tasks container-fluid">
+					<ul>{toDoList}</ul>
+				</div>
+			</div>
 		</div>
 	);
 };
